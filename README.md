@@ -9,42 +9,28 @@ some text
 
 Click  **abc** button
 
-## TEST
+## page 2
+
+hyperlink [demo](https://google.com).
 
 
-## What is Cloud Shell?
-
-Before we jump in, let's briefly go over what Cloud Shell can do.
-
-Cloud Shell is a personal hosted Virtual Machine which comes pre-loaded with developer tools for Google Cloud products. This interactive shell environment comes with a built-in code editor, persistent disk storage, and web preview functionality. To use command-line access alone, visit [console.cloud.google.com/cloudshell](https://console.cloud.google.com/cloudshell).
-
-You can direct your users to Cloud Shell to help them quickly get started with your project; giving them an opportunity to step through a use case and familiarize themselves with your project's functionality.
-
-Continue on to the next step to start setting up your tutorial.
 
 
-## In-context tutorials
-
-What you're looking at now is an in-context tutorial.
-
-The content is shown along with the Cloud Shell environment where you can carry out the tutorial steps. Having the tutorial and development environment open in the same place makes it easier for your users to start using your project through a straightforward single screen experience.
+## page 3
 
 Try running a command now:
 ```bash
-echo "Hello Cloud Shell"
+echo "Hello World"
 ```
 
-**Tip**: Click the copy button on the side of the code box and paste the command in the Cloud Shell terminal to run it.
-
-Next, you’ll write and launch a basic tutorial.
+**Tip**: Click the copy button on the side of the code box and paste the command in the terminal to run it.
 
 
-## Opening the editor
+## page 4
 
-You can edit a file stored in Cloud Shell using Cloud Shell’s built-in text editor.
 
 *  To , open the editor by clicking on the <walkthrough-cloud-shell-editor-icon></walkthrough-cloud-shell-editor-icon> icon.
-*  Look at the source file for this tutorial by opening `tutorial.md`.
+*  open `README.md`.
 *  Try making a change to the file for this tutorial, then saving it using the <walkthrough-editor-spotlight spotlightId="fileMenu">file menu</walkthrough-editor-spotlight>.
 
 To restart the tutorial with your changes, run:
