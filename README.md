@@ -9,6 +9,8 @@ some text
 
 Click  **abc** button
 
+## TEST
+
 
 ## What is Cloud Shell?
 
@@ -41,7 +43,7 @@ Next, you’ll write and launch a basic tutorial.
 
 You can edit a file stored in Cloud Shell using Cloud Shell’s built-in text editor.
 
-*  To start, open the editor by clicking on the <walkthrough-cloud-shell-editor-icon></walkthrough-cloud-shell-editor-icon> icon.
+*  To , open the editor by clicking on the <walkthrough-cloud-shell-editor-icon></walkthrough-cloud-shell-editor-icon> icon.
 *  Look at the source file for this tutorial by opening `tutorial.md`.
 *  Try making a change to the file for this tutorial, then saving it using the <walkthrough-editor-spotlight spotlightId="fileMenu">file menu</walkthrough-editor-spotlight>.
 
