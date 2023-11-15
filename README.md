@@ -38,56 +38,6 @@ To restart the tutorial with your changes, run:
 cloudshell launch-tutorial -d tutorial.md
 ```
 
-Next, you will learn how to format the text in a tutorial.
-
-
-## Writing in Markdown
-
-To write your tutorial, use [Markdown](https://en.wikipedia.org/wiki/Markdown) and follow these guidelines:
-
-
-### Edit the title
-
-Modify the title of this tutorial ('# Introduction to writing tutorials in Cloud Shell') by changing it to:
-
-```
-# Teach me to write a tutorial
-```
-
-### Add a new step
-
-Next, add a step just after the title like this:
-
-```
-## Step 1
-This is a new step I’ve just added.
-```
-
-Each 'step' of a tutorial is displayed on one page. To move through steps, users use the 'Back' and 'Next' buttons.
-
-
-### Add underlying items to a step
-
-To list items that are part of a tutorial step under a particular step heading, add them as such:
-
-```
-### This is an item under your first step
-```
-
-The tutorial engine also supports Markdown features like links and images. Note, **including HTML is not supported**.
-
-To recap, a **title** is marked with a **level 1** heading, a **step** with a **level 2** heading, and an **item** with a **level 3** heading.
-
-
-### Restart to see changes
-
-To see your changes, restart the tutorial by running:
-```bash
-cloudshell launch-tutorial -d tutorial.md
-```
-
-Next up, adding helpful links and icons to your tutorial.
-
 
 ## Special tutorial features
 
