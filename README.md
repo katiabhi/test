@@ -3,13 +3,11 @@
 
 ## Heading 1
 
-Get your users up and running quickly with your project by including an interactive tutorial.
+some text
 
-This guide will show you how to build your own interactive tutorial (like this one). It'll also walk you through generating a button that users can use to launch your finished tutorial.
+**h2**: text
 
-**Time to complete**: About 10 minutes
-
-Click the **Start** button to move to the next step.
+Click  **abc** button
 
 
 ## What is Cloud Shell?
