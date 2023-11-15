@@ -1,7 +1,7 @@
-# Introduction to Writing Tutorials in Cloud Shell
+# Heading
 
 
-## Let's get started!
+## Heading 1
 
 Get your users up and running quickly with your project by including an interactive tutorial.
 
