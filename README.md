@@ -1,9 +1,12 @@
-# Heading
+# Introduction to Make it mine journey
 
 
-## Heading 1
+## Basics
 
-some text
+* The solutions are singleton in nature i.e. preferrably one deployment should be modified by one user at a time.
+* Follow the below steps to open your previous workspace?
+    * <walkthrough-editor-open-file> open a file for editing</walkthrough-editor-open-file>
+  
 
 **h2**: text
 
