@@ -62,8 +62,8 @@ Execute the following command to trigger the deployment.
 
 Use any of the below method to save you modified code.
 
-** Download the tar **
+**Download the tar**
 * Click on the `File` menu
 * Select `Download Workspace` to download the whole workspace on your local in compressed format.
 
-** Setup remote repo **
+**Setup remote repo**
