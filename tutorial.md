@@ -51,7 +51,7 @@ gcloud config set project $PROJECT_ID
 ---
 **Fetch the existing deployment**
 ```bash
-gcloud infra-manager deployments describe projects/$PROJECT_ID/locations/us-central1/deployments/generative-ai-document-summarization
+gcloud infra-manager deployments describe projects/$PROJECT_ID/locations/us-central1/deployments/$DEPLOYMENT_NAME
 ```
 From the output of this command, note down the input values provided in the existing deployment in the `terraformBlueprint.inputValues` section.
 
@@ -64,42 +64,42 @@ gcloud iam service-accounts create mim-journey
 ---
 **Assign the required roles to the service account**
 ```bash
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/aiplatform.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/aiplatform.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/artifactregistry.reader"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/artifactregistry.reader"
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/bigquery.admin"
-
-
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/cloudfunctions.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/bigquery.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/eventarc.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/cloudfunctions.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/iam.serviceAccountAdmin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/eventarc.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/iam.serviceAccountUser"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/iam.serviceAccountAdmin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/logging.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/iam.serviceAccountUser"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/pubsub.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/logging.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/resourcemanager.projectIamAdmin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/pubsub.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/run.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/resourcemanager.projectIamAdmin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/serviceusage.serviceUsageAdmin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/run.admin"
 
 
-gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:mim-journey@<gcp-project>.iam.gserviceaccount.com" --role="roles/storage.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/serviceusage.serviceUsageAdmin"
+
+
+gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:mim-journey@$PROJECT_ID.iam.gserviceaccount.com" --role="roles/storage.admin"
 ```
 
 ---
@@ -124,7 +124,7 @@ labels = {
 
 Execute the following command to trigger the re-deployment. 
 ```bash
-gcloud infra-manager deployments apply projects/$PROJECT_ID/locations/us-central1/deployments/$DEPLOYMENT_NAME --service-account projects/$PROJECT_ID/serviceAccounts/mim-journey@$PROJECT_ID.iam.gserviceaccount.com --local-source="."     --inputs-file=./input.tfvars --labels="modification-reason=make-it-mine,goog-solutions-console-deployment-name=generative-ai-document-summarization,goog-solutions-console-solution-id=generative-ai-document-summarization"
+gcloud infra-manager deployments apply projects/$PROJECT_ID/locations/us-central1/deployments/$DEPLOYMENT_NAME --service-account projects/$PROJECT_ID/serviceAccounts/mim-journey@$PROJECT_ID.iam.gserviceaccount.com --local-source="." --inputs-file=./input.tfvars --labels="modification-reason=make-it-mine,goog-solutions-console-deployment-name=generative-ai-document-summarization,goog-solutions-console-solution-id=generative-ai-document-summarization"
 ```
 
 ---
