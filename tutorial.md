@@ -1,12 +1,12 @@
 # Edit Jumpstart Solution and deploy tutorial 
 
-This tutorial provides the steps for you to build your own proof of concept solution based on the choosen Jumpstart Solution and deploy it. You can customize the choosen Jump start solutions (JSS) deployments by creating your own copy of the source code. You can modify the infrastructure and application code as needed and redeploy the solutions with the changes.
+This tutorial provides the steps for you to build your own proof of concept solution based on the chosen Jumpstart Solution and deploy it. You can customize the chosen Jump start solutions (JSS) deployments by creating your own copy of the source code. You can modify the infrastructure and application code as needed and redeploy the solutions with the changes.
 
 Each solution should be edited and deployed by one user at a time to avoid conflicts.
 
 ## Know your solution
 
-Here are the details of the <name of the solution> Jump Start Solution choosen by you.
+Here are the details of the GenAI doc summarization Jump Start Solution chosen by you.
 
 Solution Guide: [here](https://cloud.google.com/architecture/ai-ml/generative-ai-document-summarization)
 
@@ -15,23 +15,20 @@ The code for the solution is avaiable at the following location
 * Application code directory is located under `./source`
 
 
-## Step 1: Explore or Edit the solution as per your requirment
-
-<Solution specific hints for the user to explore / modify>
+## Explore or Edit the solution as per your requirement
  
 Please note: to open your recently used workspace:
-    * Go to the `File` menu.
-    * Select `Open Recent Workspace`.
-    * Choose the desired workspace.
+* Go to the `File` menu.
+* Select `Open Recent Workspace`.
+* Choose the desired workspace.
 
 
-## Step 2: Gather the required information for intializing gcloud command
+## Gather the required information for intializing gcloud command
 
 In this step you will gather the information required for the deployment of the solution
 
 **Project ID**
 
-<add / update>
 <walkthrough-project-setup></walkthrough-project-setup>
 
 **Deployment Name**
@@ -56,7 +53,7 @@ Use above output to set the <var>USER_EMAIL</var>
 ```
 
 
-## Step 3: Deploy the solution
+## Deploy the solution
 
 **Set the gcloud config.**
 ```bash
@@ -149,7 +146,7 @@ gcloud infra-manager deployments describe - describe <var>DEPLOYMENT_NAME</var>
 
 Monitor your deployment at [JSS deployment page](https://console.cloud.google.com/products/solutions/deployments?pageState=(%22deployments%22:(%22f%22:%22%255B%257B_22k_22_3A_22Labels_22_2C_22t_22_3A13_2C_22v_22_3A_22_5C_22modification-reason%2520_3A%2520make-it-mine_5C_22_22_2C_22s_22_3Atrue_2C_22i_22_3A_22deployment.labels_22%257D%255D%22))).
 
-## Step 4: Save your edits to the solution
+## Save your edits to the solution
 
 Use any of the following methods to save your edits to the solution
 
