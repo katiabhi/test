@@ -16,7 +16,9 @@ The code for the solution is avaiable at the following location
 
 
 ## Explore or Edit the solution as per your requirement
- 
+
+<Solution specific hints for the user to explore / modify>
+
 Please note: to open your recently used workspace:
 * Go to the `File` menu.
 * Select `Open Recent Workspace`.
