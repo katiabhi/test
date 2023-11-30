@@ -1,5 +1,12 @@
-# Edit Jumpstart Solution and deploy tutorial 
+<walkthrough-metadata>
+  <meta name="title" content="Edit Jumpstart Solution and deploy tutorial " />
+   <meta name="description" content="Make it mine neos tutorial" />
+  <meta name="component_id" content="1361081" />
+  <meta name="unlisted" content="true" />
+  <meta name="short_id" content="true" />
+</walkthrough-metadata>
 
+# Customize GenAI doc summarization Solution
 This tutorial provides the steps for you to build your own proof of concept solution based on the chosen Jumpstart Solution and deploy it. You can customize the chosen Jump start solutions (JSS) deployments by creating your own copy of the source code. You can modify the infrastructure and application code as needed and redeploy the solutions with the changes.
 
 Each solution should be edited and deployed by one user at a time to avoid conflicts.
@@ -31,48 +38,46 @@ In this step you will gather the information required for the deployment of the 
 
 **Project ID**
 
-<walkthrough-project-setup></walkthrough-project-setup>
+Use the following command to see the projectId:
 
+```bash
+gcloud config get project
+```
+
+```
+Use above output to set the <var>PROJECT_ID</var>
+```
+
+---
 **Deployment Name**
 
 Use the following command to list the deployments:
 ```bash
-gcloud infra-manager deployments list --location=us-central1 --project=<walkthrough-project-id/>
+gcloud infra-manager deployments list --location us-central1 --filter="labels.goog-solutions-console-deployment-name:*"
 ```
 
 ```
 Use above output to set the <var>DEPLOYMENT_NAME</var>
 ```
 
-**User account email**
-
-Use the following command to see the user account email:
-```bash
-gcloud config list | grep account
-```
-```
-Use above output to set the <var>USER_EMAIL</var>
-```
-
 
 ## Deploy the solution
 
-**Set the gcloud config.**
-```bash
-gcloud config set account <var>USER_EMAIL</var>
-gcloud config set project <walkthrough-project-id/>
-```
-
-
+---
 **Fetch Deployment details**
 ```bash
-gcloud infra-manager deployments describe projects/<walkthrough-project-id/>/locations/us-central1/deployments/<var>DEPLOYMENT_NAME</var>
+gcloud infra-manager deployments describe <var>DEPLOYMENT_NAME</var> --location us-central1
 ```
 From the output of this command, note down the input values provided in the existing deployment in the `terraformBlueprint.inputValues` section.
 
-**Create the service account**
-```bash
-gcloud iam service-accounts create mim-journey
+Also note the serviceAccount from the output of this command. The value of this field is of the form 
+```
+projects/<var>PROJECT_ID</var>/serviceAccounts/<service-account>@<var>PROJECT_ID</var>.iam.gserviceaccount.com
+```
+
+```
+Note <service-account> part and set the <var>SERVICE_ACCOUNT</var> value.
+You can also set it to any exising service account.
 ```
 
 **Assign the required roles to the service account**
@@ -121,13 +126,13 @@ Create `input.tfvars` file.
 
 Find the sample content below and modify it by providing the respective details.
 ```
-delete_contents_on_destroy = true
-deployment_name = <input_your_deployment_name_here>
-project_id = <input_your_project_name_here>
-region = "us-central1"
+delete_contents_on_destroy=True
+region="us-central1"
+project_id = "<var>PROJECT_ID</var>"
+deployment_name = "<var>DEPLOYMENT_NAME</var>"
 labels = {
-    "goog-solutions-console-deployment-name" = "generative-ai-document-summarization",
-    "goog-solutions-console-solution-id" = "generative-ai-document-summarization"
+  "goog-solutions-console-deployment-name" = "<var>DEPLOYMENT_NAME</var>",
+  "goog-solutions-console-solution-id" = "generative-ai-document-summarization"
 }
 ```
 
